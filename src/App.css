@@ -1,0 +1,701 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.navbar {
+  background: #16213e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  border-bottom: 2px solid #0f3460;
+}
+
+.navbar h1 {
+  color: #e94560;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #a8b2d1;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover {
+  background: #0f3460;
+  color: #e94560;
+}
+
+.btn-logout {
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: #c73650;
+}
+
+/* ===== АВТОРИЗАЦИЯ ===== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 20px;
+}
+
+.login-box {
+  background: #16213e;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #0f3460;
+}
+
+.login-box h1 {
+  text-align: center;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.login-box h2 {
+  text-align: center;
+  color: #a8b2d1;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border: 2px solid #0f3460;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.login-box input::placeholder {
+  color: #5a6a8a;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #e94560;
+  background: #16213e;
+  box-shadow: 0 0 0 3px rgba(233,69,96,0.1);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background: #e94560;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: #c73650;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(233,69,96,0.3);
+}
+
+.toggle-form {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #5a6a8a;
+}
+
+.toggle-form span {
+  color: #e94560;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toggle-form span:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background: #2d1320;
+  color: #ff6b6b;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: 1px solid #e94560;
+}
+
+/* ===== ДАШБОРД ===== */
+.dashboard {
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-section {
+  background: #16213e;
+  padding: 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border: 1px solid #0f3460;
+}
+
+.welcome-section h2 {
+  color: #e94560;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.welcome-section p {
+  color: #a8b2d1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #16213e;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  border-bottom: 4px solid transparent;
+  border: 1px solid #0f3460;
+}
+
+.stat-card:nth-child(1) { border-bottom-color: #e94560; }
+.stat-card:nth-child(2) { border-bottom-color: #00b4d8; }
+.stat-card:nth-child(3) { border-bottom-color: #ffd60a; }
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #a8b2d1;
+  font-size: 0.9rem;
+}
+
+.quick-actions {
+  background: #16213e;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border: 1px solid #0f3460;
+}
+
+.quick-actions h3 {
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-card {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid #0f3460;
+}
+
+.action-card:nth-child(1):hover {
+  border-color: #e94560;
+  background: #1f1335;
+}
+
+.action-card:nth-child(2):hover {
+  border-color: #00b4d8;
+  background: #0f2a35;
+}
+
+.action-card:nth-child(3):hover {
+  border-color: #ffd60a;
+  background: #2a2810;
+}
+
+.action-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.action-card h4 {
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+.action-card p {
+  color: #a8b2d1;
+  font-size: 0.9rem;
+}
+
+/* ===== УРОКИ ===== */
+.lessons-page {
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.lessons-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lessons-container h2 {
+  color: #e94560;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.lesson-card {
+  background: #16213e;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  border: 1px solid #0f3460;
+}
+
+.lesson-card:hover {
+  transform: translateY(-3px);
+  border-color: #e94560;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.lesson-header h3 {
+  color: #e0e0e0;
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.completed-badge {
+  background: #1a3a2a;
+  color: #4caf50;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.btn-start-lesson {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background: #e94560;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-start-lesson:hover {
+  background: #c73650;
+  transform: translateY(-2px);
+}
+
+/* ===== УРОК (ИГРА) ===== */
+.lesson-play {
+  display: flex;
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.lesson-sidebar {
+  width: 380px;
+  background: #16213e;
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+  border-right: 1px solid #0f3460;
+}
+
+.btn-back {
+  background: #0f3460;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #a8b2d1;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background: #1a4a7a;
+  color: #e0e0e0;
+}
+
+.lesson-sidebar h2 {
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+.lesson-description {
+  color: #a8b2d1;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.message.success {
+  background: #1a3a2a;
+  color: #4caf50;
+  border: 1px solid #2d5a3d;
+}
+
+.message.error {
+  background: #2d1320;
+  color: #ff6b6b;
+  border: 1px solid #e94560;
+}
+
+.lesson-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-reset, .btn-next {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-reset {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-reset:hover {
+  background: #f57c00;
+}
+
+.btn-next {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-next:hover {
+  background: #43a047;
+}
+
+.moves-list {
+  margin-top: 2rem;
+}
+
+.moves-list h4 {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.moves-list ul {
+  list-style: none;
+}
+
+.moves-list li {
+  padding: 0.5rem;
+  background: #1a1a2e;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-family: monospace;
+  color: #a8b2d1;
+}
+
+.chessboard-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ===== ИГРА С БОТОМ ===== */
+.play-bot {
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.game-container {
+  display: flex;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.game-sidebar {
+  width: 300px;
+  background: #16213e;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border: 1px solid #0f3460;
+}
+
+.game-sidebar h2 {
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.game-sidebar > p {
+  color: #a8b2d1;
+  margin-bottom: 1.5rem;
+}
+
+.game-result {
+  background: #1a3a2a;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border: 1px solid #2d5a3d;
+}
+
+.game-result h3 {
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.btn-new-game {
+  width: 100%;
+  padding: 0.8rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-new-game:hover {
+  background: #43a047;
+}
+
+.game-info {
+  margin-top: 2rem;
+}
+
+.game-info p {
+  padding: 0.7rem;
+  background: #1a1a2e;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  color: #a8b2d1;
+}
+
+.check-warning {
+  background: #2a2010 !important;
+  color: #ffd60a !important;
+  font-weight: bold;
+}
+
+/* ===== ИГРА ДЛЯ ДВОИХ ===== */
+.play-two {
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.two-player-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.two-player-container h2 {
+  text-align: center;
+  color: #e94560;
+  margin-bottom: 1.5rem;
+}
+
+.two-player-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.player-turn {
+  background: #16213e;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  color: #a8b2d1;
+  border: 1px solid #0f3460;
+}
+
+.player-turn.white-turn {
+  border: 2px solid #e94560;
+  color: #e94560;
+}
+
+.player-turn.black-turn {
+  border: 2px solid #a8b2d1;
+  color: #e0e0e0;
+}
+
+.game-over-message {
+  text-align: center;
+  background: #16213e;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border: 1px solid #0f3460;
+}
+
+.game-over-message h3 {
+  color: #4caf50;
+}
+
+.game-over-message button {
+  margin-top: 0.5rem;
+  padding: 0.7rem 2rem;
+  background: #e94560;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  color: #a8b2d1;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .lesson-play, .game-container {
+    flex-direction: column;
+  }
+  
+  .lesson-sidebar, .game-sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .two-player-info {
+    flex-direction: column;
+  }
+}
